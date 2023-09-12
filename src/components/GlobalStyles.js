@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,12 +10,6 @@ ul {
     flex-wrap: wrap;
     gap: 20px;
 };
-
-li {
-    margin: 5px 0;
-    border: 1px solid black;
-    width: 200px;
-}
 
 img {
     display: block;
@@ -35,3 +29,13 @@ p {
     text-align: center;
 }
 `;
+
+export const StyledList = styled.ul`
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+`
+
+export const StyledItem = styled.li`
+    
+`

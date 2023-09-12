@@ -1,6 +1,7 @@
 import { getCast } from 'Fetch_API';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { List } from './Cast.style';
 
 export const Cast = () => {
   const { movieID } = useParams();
@@ -15,7 +16,7 @@ export const Cast = () => {
   return (
     <>
       {actors.cast && (
-        <ul>
+        <List>
           {actors.cast.map(actor => {
             return (
               <li key={actor.id}>
@@ -28,7 +29,7 @@ export const Cast = () => {
               </li>
             );
           })}
-        </ul>
+        </List>
       )}
     </>
   );

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { MovieItem } from './TrendMovies.style';
 // import img from '../../images/await_img.jpg';
 
 export const TrendMovies = ({ movies }) => {
@@ -6,7 +7,7 @@ export const TrendMovies = ({ movies }) => {
     <ul>
       {movies.map(movie => {
         return (
-          <li key={movie.id}>
+          <MovieItem key={movie.id}>
             <Link to={`/movies/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -15,7 +16,7 @@ export const TrendMovies = ({ movies }) => {
               />
               <p>{movie.title ? movie.title : movie.name}</p>
             </Link>
-          </li>
+          </MovieItem>
         );
       })}
     </ul>

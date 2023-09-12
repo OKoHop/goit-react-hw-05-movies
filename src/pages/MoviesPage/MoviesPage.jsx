@@ -1,6 +1,7 @@
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { getMovie } from 'Fetch_API';
 import { useEffect, useState } from 'react';
+import { List, MovieList } from './MoviesPage.style';
 
 const MoviePage = () => {
   const { movieID } = useParams();
@@ -21,7 +22,7 @@ const MoviePage = () => {
 
   return (
     <>
-      <ul>
+      <MovieList>
         <li>
           {movie.poster_path && (
             <img
@@ -38,7 +39,7 @@ const MoviePage = () => {
           <p>{movie.overview}</p>
           <h3>Genres</h3>
           {movie.genres && (
-            <ul>
+            <List>
               {movie.genres.map(genre => {
                 return (
                   <li key={genre.id}>
@@ -46,20 +47,20 @@ const MoviePage = () => {
                   </li>
                 );
               })}
-            </ul>
+            </List>
           )}
         </li>
-      </ul>
+      </MovieList>
 
-      <p>Additional information</p>
-      <ul>
+      <h3>Additional information</h3>
+      <List>
         <li>
           <Link to="cast">Cast</Link>
         </li>
         <li>
           <Link to="reviews">Reviews</Link>
         </li>
-      </ul>
+      </List>
       <Outlet />
     </>
   );
