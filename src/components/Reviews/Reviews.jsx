@@ -16,7 +16,7 @@ export const Reviews = () => {
 
   return (
     <>
-      {!reviews.results ? (
+      {reviews ? (
         <ul>
           {reviews.map(review => {
             return (
