@@ -19,3 +19,23 @@ export async function getMovie(movieID) {
     return response.data;
 }
 
+export async function getCast(movieID) {
+    const response = await axios.get(`movie/${movieID}/credits?language=en-US`, options)
+    return response.data;
+}
+
+export async function getReviews(movieID) {
+    const response = await axios.get(`movie/${movieID}//reviews?language=en-US&page=1`, options)
+    return response.data;
+}
+
+export async function getQuery(search) {
+    const response = await axios.get(`search/movie`, {
+        params: {
+        api_key: API_KEY,
+        query: `${search}`,
+        languege: 'en-US',
+        }
+    })
+    return response.data;
+}

@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import { getMovie } from 'Fetch_API';
 import { useEffect, useState } from 'react';
 
@@ -54,12 +54,13 @@ const MoviePage = () => {
       <p>Additional information</p>
       <ul>
         <li>
-          <Link to="/movies/:moviesID/cast">Cast</Link>
+          <Link to="cast">Cast</Link>
         </li>
         <li>
-          <Link to="/movies/:moviesID/reviews">Reviews</Link>
+          <Link to="reviews">Reviews</Link>
         </li>
       </ul>
+      <Outlet />
     </>
   );
 };
