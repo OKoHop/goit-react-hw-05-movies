@@ -1,4 +1,4 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovie } from 'Fetch_API';
 import { useEffect, useState } from 'react';
 import { List, MovieList } from './MoviesPage.style';
@@ -6,6 +6,8 @@ import { List, MovieList } from './MoviesPage.style';
 const MoviePage = () => {
   const { movieID } = useParams();
   const [movie, setMovie] = useState({});
+  const location = useLocation();
+  const comeBack = location.state?.from ?? '/';
 
   useEffect(() => {
     try {
@@ -22,6 +24,7 @@ const MoviePage = () => {
 
   return (
     <>
+      <Link to={comeBack}> Back to HOME</Link>
       <MovieList>
         <li>
           {movie.poster_path && (

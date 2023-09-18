@@ -27,7 +27,8 @@ export const Movies = () => {
       }
     }
     fetchMovie();
-  }, [query]);
+    localStorage.setItem('movie', movies);
+  }, [query, movies]);
 
   return (
     <>
