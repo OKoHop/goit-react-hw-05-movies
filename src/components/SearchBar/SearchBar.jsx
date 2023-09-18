@@ -6,9 +6,10 @@ export const SearchBar = ({ onSearch }) => {
 
   const updateSP = e => {
     const search = e.target.value;
-
-    const params = search !== '' ? { query: query } : {};
-    setSearchParams({ params });
+    if (search === '') {
+      return setSearchParams({});
+    }
+    setSearchParams({ query: search });
   };
 
   return (
