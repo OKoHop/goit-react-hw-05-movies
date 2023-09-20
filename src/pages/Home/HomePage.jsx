@@ -3,7 +3,7 @@ import getTrendList from 'Fetch_API';
 import { TrendMovies } from '../../components/TrendMovies/TrendMovies';
 import { GlobalStyle } from '../../components/GlobalStyles';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [trendMovies, setTrendMovies] = useState([]);
 
   useEffect(() => {
@@ -22,3 +22,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

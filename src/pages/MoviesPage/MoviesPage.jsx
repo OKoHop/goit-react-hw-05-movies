@@ -58,10 +58,14 @@ const MoviePage = () => {
       <h3>Additional information</h3>
       <List>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={{ from: location }}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={{ from: location }}>
+            Reviews
+          </Link>
         </li>
       </List>
       <Outlet />
