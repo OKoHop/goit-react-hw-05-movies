@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { Movies } from '../pages/Movies/Movies';
 import { Layout } from './Layout';
 
@@ -12,9 +12,7 @@ const Reviews = lazy(() => import('./Reviews/Reviews'));
 export const App = () => {
   return (
     <>
-      <Suspense
-        fallback={<Toaster position="top-center" reverseOrder={false} />}
-      >
+      <Suspense fallback={toast.success('Loading...')}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
